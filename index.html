@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kaikaio_Admin</title>
+  <style>
+    * {
+      margin: 0px;
+    }
+    .header-title-QK {
+      border-bottom: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="check-login">检查是否登录...</div>
+  <a href="https://sso.kaikaio.com/" id="no-login" style="display: none;">未登录，点击此处登录</a>
+
+  <div id="mainapp" class="mainapp" style="display: none;">
+    <!-- 标题栏 -->
+    <header class="mainapp-header">
+      <h1 class="header-title-QK">Kaikaio_Admin</h1>
+    </header>
+    <div class="mainapp-main">
+      <!-- 侧边栏 -->
+      <ul class="mainapp-sidemenu">
+        <li onclick="push('/react16')">媒体管理（React-Admin）</li>
+        <li onclick="push('/vue')">数据统计（Vue-Admin）</li>
+      </ul>
+      <!-- 子应用  -->
+      <main id="subapp-container"></main>
+    </div>
+  </div>
+
+  <script>
+    function push(subapp) { history.pushState(null, subapp, subapp) }
+  </script>
+</body>
+
+</html>
